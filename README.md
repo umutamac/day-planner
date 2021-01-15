@@ -1,12 +1,24 @@
 # Work Day Scheduler
+## Description
 
-This project is aimed at building a day planner that uses Moment.js library to use time and date related elements. 
+This app lets users type in information, to-dos, or any other text that could help them be more organized. There are hour slots from 8am to 5pm in which users can type into. Once the user click save next to each block, the text inside of the corresponding block is saved into local storage on client side, and thus persisted over reloads.
 
-The current date is displayed through moment() function.
+The hour slots have backgrounds that are assigned at the time of initial load of the app. The background of the slots can be gray for past hours, red for current hour, or green for future hours. Additionally, the current date is dsiplayed at the top of the page.
 
-The hour blocks that are in the past have a gray background and the future ones have green backgrounds. The current hour is red. The color decision is based on comparison between the current hour from moment() and assigned value of the hour block.
+The app does not have a really developed styling, as it was aimed more towards functionality in two main areas: local storage and leveraging date/time information.
 
-The hour blocks have textarea elements that user can write into, then click on the blue button aside to save what is typed in and still have it displayed in the box. The text input is stored in local storage on client side.
+## Technologies and Tools
+This project leverages jQuery for a simple and not cluttery coding experience. Additionally, the Moment.js library is being used to use date and time information for the dynamic hour slot background.
 
+### Links
 Deployed Project Link: https://umutamac.github.io/day-planner/<br>
 Github Link: https://github.com/umutamac/day-planner
+
+### Installation
+None! Just go to deployed app at https://umutamac.github.io/day-planner/
+
+### Screenshots
+![Day Planner](/Assets/day-planner-SS.png?raw=true "Day Planner")
+
+#### Contact
+You can reach me at amacalptekin@gmail.com if you have any questions or just want to chat!
