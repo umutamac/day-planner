@@ -3,6 +3,8 @@
 
 This app lets users type in information, to-dos, or any other text that could help them be more organized, and save it on their browser. The app contains hour slots from 8am to 5pm in which users can type into. Once the user clicks save on a given slot, the content of the text area next to the clicked button is saved into local storage on client side, and thus persisted over reloads. Note that each save button works with the text area they are next to.
 
+The information typed in can be overwritten simply by changing the text and clicking save. The latest saved version stays in users' browser until their local storage is cleared, so information will come up again after refreshes, or when user closes the app and reopens the app after several days, weeks or even months.
+
 As a visual cue, the backgrounds of text areas are color coded. The colors are assigned at the time of initial load of the app. The backgrounds can be gray for past hours, red for the current hour, or green for future hours. Additionally, the current date is displayed at the top of the page.
 
 The app does not have a really developed styling, as it was aimed more towards functionality in two main areas: local storage and leveraging date/time information.
