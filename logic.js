@@ -7,12 +7,11 @@ currentDay.text(`Today is: ${currentDate}`);
 
 function importFromLS(hourslot, i) { // Get stored text from localStorage
     let storedText = localStorage.getItem(hourslot);
-    console.log(`saved hour slot: ${i} --- imported text: ${storedText}`);
-  
-    // set the textarea val to text in LS with corresponding index
-    //first elem with matching hour attr is textarea
-    $([`textAreaHour=\"${i}\"`]).text(storedText);
-
+    if (storedText != null) { // if there is a value with given key in LS;
+        console.log(`saved hour slot: ${i} --- imported text: ${storedText}`);
+        // set the textarea val to text in LS with corresponding index
+        $(`[textAreaHour=\"${i}\"]`).text(storedText);
+    }
 }
 
 function saveAction(event) {

@@ -1,14 +1,14 @@
 # Work Day Planner
 ## Description
 
-This app lets users type in information, to-dos, or any other text that could help them be more organized. There are hour slots from 8am to 5pm in which users can type into. Once the user click save next to each block, the text inside of the corresponding block is saved into local storage on client side, and thus persisted over reloads.
+This app lets users type in information, to-dos, or any other text that could help them be more organized, and save it on their browser. The app contains hour slots from 8am to 5pm in which users can type into. Once the user clicks save on a given slot, the content of the text area next to the clicked button is saved into local storage on client side, and thus persisted over reloads. Note that each save button works with the text area they are next to.
 
-The hour slots have backgrounds that are assigned at the time of initial load of the app. The background of the slots can be gray for past hours, red for current hour, or green for future hours. Additionally, the current date is dsiplayed at the top of the page.
+As a visual cue, the backgrounds of text areas are color coded. The colors are assigned at the time of initial load of the app. The backgrounds can be gray for past hours, red for the current hour, or green for future hours. Additionally, the current date is displayed at the top of the page.
 
 The app does not have a really developed styling, as it was aimed more towards functionality in two main areas: local storage and leveraging date/time information.
 
 ## Technologies and Tools
-This project leverages jQuery for a simple and not cluttery coding experience. Additionally, the Moment.js library is being used to use date and time information for the dynamic hour slot background.
+This project leverages jQuery for a simple and not cluttery coding experience. Additionally, the Moment.js library is being used to use date and time information for the dynamic hour slot background. Bootstrap CSS was also used for the styling.
 
 ### Links
 Deployed Project Link: https://umutamac.github.io/day-planner/<br>
@@ -21,4 +21,5 @@ None! Just go to deployed app at https://umutamac.github.io/day-planner/
 ![Day Planner](/Assets/day-planner-SS.png?raw=true "Day Planner")
 
 #### Contact
-You can reach me at amacalptekin@gmail.com if you have any questions or just want to chat!
+You can reach out to me via Github [![GitHub Link](https://img.shields.io/badge/Github-umutamac-lightgrey.svg)](https://github.com/umutamac)
+Alternatively, you can contact me here: amacalptekin@gmail.com
