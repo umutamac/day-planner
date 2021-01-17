@@ -1,4 +1,4 @@
-# Work Day Scheduler
+# Work Day Planner
 ## Description
 
 This app lets users type in information, to-dos, or any other text that could help them be more organized. There are hour slots from 8am to 5pm in which users can type into. Once the user click save next to each block, the text inside of the corresponding block is saved into local storage on client side, and thus persisted over reloads.

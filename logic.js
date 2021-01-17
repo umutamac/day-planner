@@ -5,25 +5,23 @@ let currentDate = moment().format('MMMM Do YYYY');
 let currentHour = moment().format('HH');
 currentDay.text(`Today is: ${currentDate}`);
 
-function importFromLS(hourslot) { // Get stored text from localStorage
-    let storedText = localStorage.getItem(hourslot)
-    console.log(`text to be imported: ${storedText}`);
-    if (storedText != "") {
-        $(hourslot).text(storedText);
-    } else { // create placeholder text if no ID has been found with a value
-        $(hourslot).attr("placeholder", "Enter Text Here...");
-    }
+function importFromLS(hourslot, i) { // Get stored text from localStorage
+    let storedText = localStorage.getItem(hourslot);
+    console.log(`saved hour slot: ${i} --- imported text: ${storedText}`);
+  
+    // set the textarea val to text in LS with corresponding index
+    //first elem with matching hour attr is textarea
+    $([`textAreaHour=\"${i}\"`]).text(storedText);
+
 }
 
-function saveAction(event){
-    let hourAttr = event.target.getAttribute("hour");
-    console.log(`${hourAttr} hourAttr saved`);
+function saveAction(event) {
+    let hourNum = event.target.getAttribute("saveHour");
+    let correspondingText = $(`[textAreaHour=\"${hourNum}\"]`).val();
+    console.log(`hour: ${hourNum} --- corresponding text: ${correspondingText}`);
 
-    let correspondingText = $(`[hour=\"${hourAttr}\"]`).val();
-    console.log(`--corresponding text: ${correspondingText}`);
-
-    // set it to LS with textarea id as the index
-    localStorage.setItem(`hourSlot${hourAttr}`, correspondingText);
+    // set it to LS with corresponding hour value as index
+    localStorage.setItem(`hourSlot${hourNum}`, correspondingText);
     //alert("The item has been saved");
 }
 
@@ -32,8 +30,8 @@ function displayThings() {
     for (i = 8; i <= 17; i++) {
         let rowDiv = $("<div>").addClass("row").attr("id", `row${i}`);
         let hourDiv = $("<div class=\"col-md-2 hour\">").attr("id", `hour${i}`).text(`${i}.00`);
-        let textArea = $("<textarea class=\"col-md-8\">").attr({ id: `textarea${i}`, hour: `${i}` });
-        let saveBtn = $("<button class=\"col-md-2 saveBtn\">").attr({ id: `saveBtn${i}`, hour: `${i}` }).text("Save");
+        let textArea = $("<textarea class=\"col-md-8\">").attr({ id: `textarea${i}`, textAreaHour: `${i}` });
+        let saveBtn = $("<button class=\"col-md-2 saveBtn\">").attr({ id: `saveBtn${i}`, saveHour: `${i}` }).text("Save");
         //console.log(i + " things created");
 
         containerDiv.append(rowDiv); // append the rows and their contents to container
@@ -49,7 +47,7 @@ function displayThings() {
         //console.log(i + " color coding done");
 
         let hourSlot = `hourSlot${i}`
-        importFromLS(hourSlot); // import the text from localstorage for each textarea
+        importFromLS(hourSlot, i); // import the text from localstorage for each textarea
         //console.log(i + " LS import done");
 
         $(`#saveBtn${i}`).click(saveAction);
